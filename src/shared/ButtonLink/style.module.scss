@@ -1,0 +1,13 @@
+@import "app/styles/variables";
+
+.button {
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid $color-border-primary;
+  background-color: $color-link-secondary;
+
+  &:hover {
+    filter: brightness(95%);
+    border-width: 2px;
+  }
+}

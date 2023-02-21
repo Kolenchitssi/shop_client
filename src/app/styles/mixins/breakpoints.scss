@@ -1,0 +1,24 @@
+// large desktop
+@mixin screen-x-large {
+  @media screen and (max-width: $screen-x-large) {
+    @content;
+  }
+}
+
+// desktop
+@mixin screen-large {
+  @media screen and (max-width: $screen-large) {
+    @content;
+  }
+}
+
+// tablet
+@mixin screen-tablet {
+  @media screen and (max-width: $screen-tablet) {
+    @content;
+  }
+}
+
+@function calculateWidth($container-width, $container-indent) {
+  @return $container-width + ($container-indent * 2);
+}

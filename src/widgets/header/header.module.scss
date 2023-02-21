@@ -1,0 +1,13 @@
+@import "app/styles/variables";
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  padding: 0 2px;
+  margin-bottom: 4px;
+  color: $color-primary;
+  background: rgba($color-background-primary, 0.8);
+}

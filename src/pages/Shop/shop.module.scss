@@ -1,0 +1,11 @@
+@import "app/styles/variables";
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid $color-border-primary;
+  margin: 8px;
+  padding: 6px;
+  background-color: rgba($color-background-primary, 0.8);
+}
