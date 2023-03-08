@@ -14,6 +14,7 @@ import { LeftMenu } from "widgets/left-menu";
 
 import "./App.scss";
 import { TopMenu } from "widgets/top-menu";
+import ThemeProvider from "./styles/themes/themeProvider";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -35,17 +36,19 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <div className="app__wrapper">
-        <Header />
-        <TopMenu />
+      <ThemeProvider>
+        <div className="app__wrapper">
+          <Header />
+          <TopMenu />
 
-        <div className="main">
-          {/* <NavBar />*/}
-          <LeftMenu />
-          <AppRouter />
+          <div className="main">
+            {/* <NavBar />*/}
+            <LeftMenu />
+            <AppRouter />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

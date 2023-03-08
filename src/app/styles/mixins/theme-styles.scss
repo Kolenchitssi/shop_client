@@ -1,0 +1,29 @@
+// /src/app/styles/mixins/theme-styles.scss
+
+@import "../variables.scss";
+
+@mixin theme-light-style {
+  color: $color-primary;
+  background-color: $color-background-primary;
+  border-color: $color-border-primary;
+}
+
+@mixin theme-dark-style {
+  color: $color-primary-dark;
+  background-color: $color-background-primary-dark;
+  border-color: $color-border-primary-dark;
+}
+
+@mixin text-light-style {
+  background-color: $color-background-primary;
+  color: $color-text-primary;
+}
+
+@mixin text-dark-style {
+  background-color: $color-background-primary-dark;
+  color: $color-text-primary-dark;
+}
+
+@mixin text-dark {
+  color: $color-text-primary-dark;
+}

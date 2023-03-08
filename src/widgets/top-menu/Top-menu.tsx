@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-import { useAppSelector } from "app/hooks/hooks";
 import classNames from "clsx";
+import { useAppSelector } from "app/hooks/hooks";
+import { useThemeContext, themes } from "app/styles/themes/ThemeContext";
 
 import { routePath } from "app/routes/routePaths";
-import logo from "assets/logoText.png";
 
 import styles from "./style.module.scss";
+import Toggle from "shared/ToggleTheme/ToggleTheme";
 
 type Props = {
   className?: string;
@@ -15,9 +15,10 @@ type Props = {
 };
 
 const TopMenu: React.FunctionComponent = (props: Props) => {
-  const { className = "", theme = "light" } = props;
-
+  const { className = "" } = props;
   const { isUserAuth } = useAppSelector((state) => state.user);
+
+  const { theme, setTheme } = useThemeContext();
 
   return (
     <>
@@ -27,12 +28,6 @@ const TopMenu: React.FunctionComponent = (props: Props) => {
           [`${styles.topMenu}-dark`]: theme === "dark",
         })}
       >
-        <div className={styles.logoWrapper}>
-          <NavLink className={styles.logo} to={routePath.SHOP_ROUTE}>
-            <img className={styles.logoPicture} src={logo}></img>
-          </NavLink>
-        </div>
-
         {/* /Can may use <NavLink to={SHOP_ROUTE}>Home</NavLink> */}
         {isUserAuth ? (
           <div className={styles.menuWrapper}>
@@ -63,6 +58,15 @@ const TopMenu: React.FunctionComponent = (props: Props) => {
             </NavLink>
           </div>
         )}
+        <div>
+          <Toggle
+            onChange={() => {
+              if (theme === themes.light) setTheme(themes.dark);
+              if (theme === themes.dark) setTheme(themes.light);
+            }}
+            value={theme === themes.light}
+          />
+        </div>
       </div>
     </>
   );

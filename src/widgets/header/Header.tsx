@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import classNames from "clsx";
+import logo from "assets/logoText.png";
+import { routePath } from "app/routes/routePaths";
 
 import { ReactComponent as Logo } from "./logo.svg";
 import styles from "./header.module.scss";
@@ -7,7 +10,7 @@ import styles from "./header.module.scss";
 type Props = {
   stickable?: boolean;
   className?: string;
-  theme?: "light" | "dark";
+  theme?: "light" | "dark"; //уже не нужно
 };
 
 const Header = (props: Props) => {
@@ -21,7 +24,12 @@ const Header = (props: Props) => {
           [`${styles.header}-dark`]: theme === "dark",
         })}
       >
-        Header
+        <div className={styles.logoWrapper}>
+          <NavLink className={styles.logo} to={routePath.SHOP_ROUTE}>
+            <img className={styles.logoPicture} src={logo}></img>
+          </NavLink>
+        </div>
+        <h1>Wood Shop: Wooden toys and furniture</h1>
       </div>
     </>
   );

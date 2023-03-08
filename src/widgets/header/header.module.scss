@@ -1,13 +1,44 @@
 @import "app/styles/variables";
+@import "app/styles/mixins/theme-styles";
+
+:root[data-theme="light"] .header {
+  @include theme-light-style;
+
+  h1 {
+    text-shadow: $color-background-primary 1px 0 10px;
+  }
+}
+
+:root[data-theme="dark"] .header {
+  @include theme-dark-style;
+}
 
 .header {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
-  height: 64px;
+  height: 48px;
   padding: 0 2px;
   margin-bottom: 4px;
-  color: $color-primary;
-  background: rgba($color-background-primary, 0.8);
+
+  h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+  }
+}
+
+.logoWrapper {
+  padding: 0 42px 0 24px;
+}
+
+.logo {
+  background: url("../../assets/logoText.png") no-repeat red;
+}
+
+.logoPicture {
+  width: 100px;
+  height: 30px;
+  border-radius: 12px;
 }
