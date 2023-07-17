@@ -31,7 +31,7 @@ $screen-tablet: calculatewidth(
 $color-white: #ffffff;
 $color-black: #000000;
 
-$color-body: #d2e6e9;
+$color-body: hsl(25, 85%, 93%);
 $color-body-dark: #301c0c;
 
 $color-primary: #22211e;
@@ -49,13 +49,13 @@ $color-link-primary-dark: #a5cac7;
 $color-link-secondary: #ecd58a;
 $color-link-secondary--dark: #1d2e55;
 
-$color-background-primary: #f3f5f7;
+$color-background-primary: hsl(27, 15%, 97%);
 $color-background-primary-dark: #524d46;
 $color-background-secondary: #1f0505;
 $color-background-secondary-dark: #ca8a8a;
 
 $color-border-primary: #3a0a0a;
-$color-border-primary-dark: #bfd0d3;
+$color-border-primary-dark: #888888;
 $color-border-secondary: #c9bdad;
 
 $color-bottom-primary: #96a9bb;

@@ -12,9 +12,10 @@ import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import { LeftMenu } from "widgets/left-menu";
 
-import "./App.scss";
 import { TopMenu } from "widgets/top-menu";
 import ThemeProvider from "./styles/themes/themeProvider";
+
+import "./App.scss";
 
 function App() {
   const dispatch = useAppDispatch();

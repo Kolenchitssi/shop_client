@@ -5,12 +5,16 @@
   @include theme-light-style;
 
   h1 {
-    text-shadow: $color-background-primary 1px 0 10px;
+    text-shadow: $color-background-primary 4px 0 10px;
   }
 }
 
 :root[data-theme="dark"] .header {
   @include theme-dark-style;
+
+  h1 {
+    text-shadow: $color-primary 4px 0 10px;
+  }
 }
 
 .header {
