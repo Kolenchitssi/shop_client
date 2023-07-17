@@ -16,7 +16,7 @@ export const ThemeContext = React.createContext<ContextProps>(
 
 export const useThemeContext = () => React.useContext(ThemeContext);
 
-//*or
+//* or
 // export const ThemeContext = React.createContext<ContextProps>({
 //   theme: "dark",
 //   setTheme: () => {},
