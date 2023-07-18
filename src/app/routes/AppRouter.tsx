@@ -6,11 +6,11 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { routePath } from "./routePaths";
 import { authRoutes, publicRoutes } from "./router";
 
-interface IProps {
+interface IAppRouterProps {
   isAuthorized?: boolean;
 }
 
-const AppRouter: FC<IProps> = ({ isAuthorized }) => {
+const AppRouter: FC<IAppRouterProps> = ({ isAuthorized }) => {
   const { user, isUserAuth, isUserLoading } = useAppSelector(
     (state) => state.user
   );

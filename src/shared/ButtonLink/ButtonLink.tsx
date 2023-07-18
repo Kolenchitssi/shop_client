@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { omit } from "app/utils/omit";
-import styles from "./style.module.scss";
+import styles from "./ButtonLink.module.scss";
 
 interface ButtonLinkProps {
   className?: string;

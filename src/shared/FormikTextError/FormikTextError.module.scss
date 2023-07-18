@@ -1,0 +1,8 @@
+@import "app/styles/variables";
+
+.formik__text-error {
+  font-size: 12px;
+  padding-left: 2px;
+  line-height: 1.5;
+  color: $color-error;
+}

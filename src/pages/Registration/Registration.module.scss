@@ -1,0 +1,13 @@
+@import "app/styles/variables";
+
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid $color-primary;
+
+  &__card {
+    min-height: 300px;
+  }
+}

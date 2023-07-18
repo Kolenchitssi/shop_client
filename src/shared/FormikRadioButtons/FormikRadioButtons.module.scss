@@ -1,0 +1,86 @@
+@import "app/styles/variables";
+
+.label {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5em;
+  opacity: 0.8;
+  padding-left: 2px;
+}
+
+.field {
+  padding-left: 4px;
+}
+
+.input {
+  margin: 8px 12px;
+  font-size: 13px;
+
+  &__label {
+    padding: 0 6px;
+  }
+}
+
+/* для элемента input c type="radio" */
+.input__radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label связанного с .input__radio */
+.input__radio + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.input__radio + label::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.8em;
+  height: 0.8em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid $color-scheduled;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.input__radio:not(:disabled):not(:checked) + label:hover::before {
+  border-width: 2px;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.input__radio:not(:disabled):active + label::before {
+  background-color: $color-scheduled;
+  border-color: $color-white;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.input__radio:focus + label::before {
+  box-shadow: 0 0 0 0.1rem rgba($color-scheduled, 0.5);
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.input__radio:focus:not(:checked) + label::before {
+  border-color: red;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.input__radio:checked + label::before {
+  border: 3px solid $color-scheduled;
+  background-color: $color-white;
+  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.input__radio:disabled + label::before {
+  background-color: $color-disable;
+}
