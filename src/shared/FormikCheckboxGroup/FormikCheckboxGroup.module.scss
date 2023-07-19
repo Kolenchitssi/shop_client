@@ -1,0 +1,22 @@
+@import "app/styles/variables";
+
+.label {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5em;
+  opacity: 0.8;
+  padding-left: 2px;
+}
+
+.field {
+  padding-left: 4px;
+}
+
+.input {
+  margin: 8px 12px;
+  font-size: 13px;
+
+  &__label {
+    padding: 0 6px;
+  }
+}

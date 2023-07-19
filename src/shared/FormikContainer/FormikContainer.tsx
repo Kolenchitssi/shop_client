@@ -21,17 +21,24 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
     { label: "radio-2 ", value: "r2" },
     { label: "radio-3 ", value: "r3" },
   ];
+  const checkboxOptions = [
+    { label: "chekbox-1", value: "check1" },
+    { label: "chekbox-2 ", value: "check2" },
+    { label: "chekbox-3 ", value: "check3" },
+  ];
   const initialValues = {
     email: "email test",
     description: "",
     select1: "",
     radio1: "",
+    checkbox1: [],
   };
   const validationSchema = Yup.object({
     email: Yup.string().required("required"),
     description: Yup.string().required("required"),
     select1: Yup.string().required("required"),
     radio1: Yup.string().required("required"),
+    checkbox1: Yup.array().required("required"),
   });
   const onSubmit = (values: any) => {
     console.log("Form Data", values);
@@ -66,6 +73,12 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
             fieldType="radio"
             label="radio buttons "
             options={radioOptions}
+          />
+          <FormikControls
+            name="checkbox1"
+            fieldType="checkbox"
+            label="checkbox group"
+            options={checkboxOptions}
           />
           <button type="submit">Submit</button>
         </Form>

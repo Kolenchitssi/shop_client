@@ -1,8 +1,9 @@
 import { memo } from "react";
 import FormikInputField from "shared/FormikInputField";
-import FormikRadioButtons from "shared/FormikRadioButtons/FormikRadioButtons";
-import FormikSelectField from "shared/FormikSelectField/FormikSelectField";
-import FormikTextAreaField from "shared/FormikTextAreaField/FormikTextAreaField";
+import FormikRadioButtons from "shared/FormikRadioButtons";
+import FormikSelectField from "shared/FormikSelectField";
+import FormikTextAreaField from "shared/FormikTextAreaField";
+import FormikCheckboxGroup from "shared/FormikCheckboxGroup";
 
 enum fieldTypeKeys {
   input = "input",
@@ -38,7 +39,7 @@ const FormikControls: React.FC<IFormikControlsProps> = memo(
       case fieldTypeKeys.select:
         return <FormikSelectField name={name} options={options} {...rest} />;
       case fieldTypeKeys.checkbox:
-        break;
+        return <FormikCheckboxGroup name={name} options={options} {...rest} />;
       case fieldTypeKeys.radio:
         return <FormikRadioButtons name={name} options={options} {...rest} />;
 
