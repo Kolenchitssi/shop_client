@@ -4,6 +4,7 @@ import FormikRadioButtons from "shared/FormikRadioButtons";
 import FormikSelectField from "shared/FormikSelectField";
 import FormikTextAreaField from "shared/FormikTextAreaField";
 import FormikCheckboxGroup from "shared/FormikCheckboxGroup";
+import FormikCalendarField from "shared/FormikCalendarField/FormikCalendarField";
 
 enum fieldTypeKeys {
   input = "input",
@@ -42,6 +43,8 @@ const FormikControls: React.FC<IFormikControlsProps> = memo(
         return <FormikCheckboxGroup name={name} options={options} {...rest} />;
       case fieldTypeKeys.radio:
         return <FormikRadioButtons name={name} options={options} {...rest} />;
+      case fieldTypeKeys.date:
+        return <FormikCalendarField name={name} {...rest} />;
 
       case fieldTypeKeys.date:
         break;

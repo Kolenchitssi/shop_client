@@ -32,6 +32,7 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
     select1: "",
     radio1: "",
     checkbox1: [],
+    date1: null,
   };
   const validationSchema = Yup.object({
     email: Yup.string().required("required"),
@@ -79,6 +80,11 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
             fieldType="checkbox"
             label="checkbox group"
             options={checkboxOptions}
+          />
+          <FormikControls
+            name="date1"
+            fieldType="date"
+            label="Check Date"
           />
           <button type="submit">Submit</button>
         </Form>
