@@ -34,7 +34,7 @@ const Shop = memo(() => {
   // }, [device.page, device.selectedType, device.selectedBrand]);
 
   return (
-    <div className={styles.shop}> shop </div>
+    <div className={styles.shop}> shop1 </div>
     // <Container>
     //   <Row className="mt-3">
     //     <Col md={3}>
