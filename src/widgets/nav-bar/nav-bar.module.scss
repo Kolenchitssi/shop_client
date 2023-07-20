@@ -1,0 +1,14 @@
+@import "app/styles/variables";
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    border-radius: 8px;
+    border: 1px solid $color-border-primary;
+    margin: 8px;
+    padding: 6px;
+    background-color: rgba($color-background-primary, 0.65);
+  }  
+ 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./routes/AppRouter";
-// import NavBar from "./components/NavBar";
 // import { check } from "./http/userApi";
 
 import { Counter } from "../features/counter/Counter";
@@ -11,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import { LeftMenu } from "widgets/left-menu";
+import {NavBar} from "widgets/nav-bar";
 
 import { TopMenu } from "widgets/top-menu";
 import ThemeProvider from "./styles/themes/themeProvider";
@@ -41,9 +41,8 @@ function App() {
         <div className="app__wrapper">
           <Header />
           <TopMenu />
-
+          <NavBar />
           <div className="main">
-            {/* <NavBar />*/}
             <LeftMenu />
             <AppRouter />
           </div>

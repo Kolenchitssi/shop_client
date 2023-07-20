@@ -13,10 +13,11 @@ import {
 import { useAppDispatch, useAppSelector } from "app/hooks/hooks";
 import { login, registration } from "features/user/userActionCreator";
 
-import styles from "./Registration.module.scss";
 import FormikInputField from "shared/FormikInputField";
 import FormikControls from "shared/FormikControl/FormikControl";
 import FormikContainer from "shared/FormikContainer/FormikContainer";
+
+import styles from "./Registration.module.scss";
 
 const Auth: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
@@ -57,20 +58,20 @@ const Auth: React.FunctionComponent = () => {
   return (
     <div
       className={styles.registration}
-      style={{ height: window.innerHeight - 50 }}
+      // style={{ height: window.innerHeight - 50 }}
     >
-      <div className="Row">
-        <div className="Col">
+      <div className={styles.row}>
+        <div className={styles.col}>
           <div
-            className="Card authorization__card p-5"
-            style={{ width: 640, height: 200 }}
+            className={styles.card}
+            
           >
             {/* <FormikControls
               name={"test name"}
               fieldType="input"
               typeInput={"text"}
             /> */}
-            <h2 className="m-auto">{"Регистрация нового пользователя"}</h2>
+            <h2 className={styles.title}>{"Регистрация нового пользователя"}</h2>
             <FormikContainer />
             <form className="form d-flex flex-column">
               <input

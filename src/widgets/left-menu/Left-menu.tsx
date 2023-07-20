@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import classNames from "clsx";
 
 import { routePath } from "app/routes/routePaths";
-import styles from "./left-menu.module.scss";
 import { ButtonLink } from "shared/ButtonLink";
+
+import styles from "./left-menu.module.scss";
 
 type Props = {
   className?: string;

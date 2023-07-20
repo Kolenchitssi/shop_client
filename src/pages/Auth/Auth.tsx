@@ -62,7 +62,8 @@ const Auth: React.FunctionComponent = () => {
             <h2 className="m-auto">
               {isLogin ? "Авторизация" : "Регистрация"}
             </h2>
-            <form className="form d-flex flex-column">
+
+           <form className="form d-flex flex-column">
               {/* TODO сделать для каждой страницы папку и там scss file */}
               <input
                 className="mt-3"
@@ -85,7 +86,7 @@ const Auth: React.FunctionComponent = () => {
                   justifyContent: "space-between",
                   alignItems: "center",
                 }}
-              >
+              > 
                 {isLogin ? (
                   <div>
                     Нет аккаунта?{" "}
@@ -99,6 +100,7 @@ const Auth: React.FunctionComponent = () => {
                     <NavLink to={routePath.LOGIN_ROUTE}>Войти</NavLink>
                   </div>
                 )}
+                
                 <button
                   className="mt-3 align-self-end"
                   // variant="outline-success"
@@ -107,7 +109,8 @@ const Auth: React.FunctionComponent = () => {
                   {isLogin ? "Войти" : "Регистрация"}
                 </button>
               </div>
-            </form>
+            </form> 
+
           </div>
         </div>
       </div>

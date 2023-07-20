@@ -2,14 +2,19 @@ import { memo } from "react";
 import { Field, ErrorMessage, FieldProps } from "formik";
 
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import FormikTextError from "shared/FormikTextError";
-import styles from "./FormikSelectField.module.scss";
+import styles from "./FormikCalendarField.module.scss";
+import "./FormikCalendarField.scss";
 
 interface FormikSelectFieldProps {
   name: string;  
   label?: string;
   disabled?: boolean;
+  isClearable?: boolean;
+  showIcon?: boolean;
+  placeholder?: string;
 }
 
 const FormikCalendarField: React.FC<FormikSelectFieldProps> = memo((props) => {
@@ -17,6 +22,10 @@ const FormikCalendarField: React.FC<FormikSelectFieldProps> = memo((props) => {
     name,
     label,
     disabled = false,
+    isClearable=true,
+    showIcon=false,
+    placeholder='../../....',
+
     ...rest
   } = props;
   return (
@@ -40,12 +49,14 @@ const FormikCalendarField: React.FC<FormikSelectFieldProps> = memo((props) => {
       const {setFieldValue}=form
       const {value} =field;
     return  <DatePicker
+    showIcon
     id={name}
+    isClearable={isClearable}
     {...field}
     {...rest}     
     selected={value}
-    onChange={(val)=>setFieldValue(name, val)}
-      
+    onChange={(val)=>setFieldValue(name, val)} 
+    placeholderText={placeholder}   
     />}}
     
       </Field>

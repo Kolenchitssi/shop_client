@@ -3,11 +3,17 @@
 :root[data-theme="light"] .app__wrapper {
   background-color: $color-body;
   color: $color-text-primary;
+  color-scheme: light;
 }
 
 :root[data-theme="dark"] .app__wrapper {
   background-color: $color-body-dark;
-  color: $color-text-secondary-dark;
+  color: $color-text-secondary;
+  color-scheme: dark;
+
+  a {
+    color: $color-link-secondary;
+  }
 }
 
 .app__wrapper {
