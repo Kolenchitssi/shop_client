@@ -1,7 +1,6 @@
 import { memo } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { log } from "console";
 import FormikControls from "shared/FormikControl/FormikControl";
 
 interface FormikContainerProps {
@@ -81,11 +80,7 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
             label="checkbox group"
             options={checkboxOptions}
           />
-          <FormikControls
-            name="date1"
-            fieldType="date"
-            label="Check Date"
-          />
+          <FormikControls name="date1" fieldType="date" label="Check Date" />
           <button type="submit">Submit</button>
         </Form>
       )}

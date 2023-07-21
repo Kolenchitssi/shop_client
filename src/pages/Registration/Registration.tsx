@@ -17,9 +17,11 @@ import FormikInputField from "shared/FormikInputField";
 import FormikControls from "shared/FormikControl/FormikControl";
 import FormikContainer from "shared/FormikContainer/FormikContainer";
 
+import { LoginForm } from "widgets/login-form";
+import { RegistrationForm } from "widgets/registration-form";
 import styles from "./Registration.module.scss";
 
-const Auth: React.FunctionComponent = () => {
+const Registration: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
   const { user, isUserAuth, isUserLoading } = useAppSelector(
     (state) => state.user
@@ -62,17 +64,22 @@ const Auth: React.FunctionComponent = () => {
     >
       <div className={styles.row}>
         <div className={styles.col}>
-          <div
-            className={styles.card}
-            
-          >
+          <div className={styles.card}>
             {/* <FormikControls
               name={"test name"}
               fieldType="input"
               typeInput={"text"}
             /> */}
-            <h2 className={styles.title}>{"Регистрация нового пользователя"}</h2>
+            <h2 className={styles.title}>
+              {"Регистрация нового пользователя"}
+            </h2>
             <FormikContainer />
+            <hr />
+            <LoginForm />
+            <hr />
+            <RegistrationForm />
+            <hr />
+
             <form className="form d-flex flex-column">
               <input
                 className="mt-3"
@@ -125,6 +132,6 @@ const Auth: React.FunctionComponent = () => {
   );
 };
 
-Auth.displayName = "Auth";
+Registration.displayName = "Registration";
 
-export default Auth;
+export default Registration;

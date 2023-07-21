@@ -20,8 +20,8 @@ const Header = (props: Props) => {
     <>
       <div
         className={classNames(className, styles.header, {
-          [`${styles.header}-light`]: theme === "light",
-          [`${styles.header}-dark`]: theme === "dark",
+          // [`${styles.header}-light`]: theme === "light",
+          // [`${styles.header}-dark`]: theme === "dark",
         })}
       >
         <div className={styles.logoWrapper}>

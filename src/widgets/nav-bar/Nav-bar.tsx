@@ -32,7 +32,7 @@ const NavBar = () => {
         <a href={routePath.SHOP_ROUTE}>Shop {String(isUserAuth)}</a>
         <div>
           <Input />
-          Найти
+          <span className={styles.search}> Найти</span>
         </div>
         {isUserAuth ? (
           <div className="navigation">
