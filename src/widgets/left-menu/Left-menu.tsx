@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import classNames from "clsx";
 
 import { routePath } from "app/routes/routePaths";
-import { ButtonLink } from "shared/ButtonLink";
+import { ButtonLink } from "shared/ui/basic/ButtonLink";
 
 import styles from "./left-menu.module.scss";
 

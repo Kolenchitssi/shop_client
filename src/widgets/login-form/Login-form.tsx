@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
-import FormikControls from "shared/FormikControl/FormikControl";
+import FormikControls from "shared/ui/formik/FormikControl/FormikControl";
 
 import styles from "./login-form.module.scss";
 
@@ -40,13 +40,13 @@ const LoginForm: React.FunctionComponent<Props> = memo((props) => {
             name="email"
             fieldType="input"
             type="email"
-            label="E-mail"
+            label="E-mail."
           />
           <FormikControls
             name="password"
             fieldType="input"
             type="password"
-            label="Password"
+            label="Password."
           />
           <button type="submit" disabled={!formik.isValid}>
             {buttonName}

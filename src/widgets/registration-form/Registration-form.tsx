@@ -7,10 +7,11 @@ import classNames from "clsx";
 import { NavLink } from "react-router-dom";
 import { routePath } from "app/routes/routePaths";
 
-import FormikControls from "shared/FormikControl/FormikControl";
+import FormikControls from "shared/ui/formik/FormikControl/FormikControl";
+
+import { initialValues, validationSchema } from "./registration-form-utils";
 
 import styles from "./login-form.module.scss";
-
 interface Props {
   className?: string;
   buttonName?: string;
@@ -19,43 +20,15 @@ interface Props {
 const RegistrationForm: React.FunctionComponent<Props> = memo((props) => {
   const { className = "", buttonName = "Login" } = props;
 
-  const initialValues = {
-    email: "",
-    passsword: "",
-    confirmPasssword: "",
-    role: "",
-    modeOfContacts: "",
-    phone: "",
-  };
-
   const roleOptions = [
     { label: "Admin", value: "ADMIN" },
     { label: "User", value: "USER" },
   ];
+
   const modeOfContactsOptions = [
-    { label: "Phone", value: "phone" },
-    { label: "Email", value: "email" },
+    { label: "Phone:", value: "phoneContact" },
+    { label: "E-mail:", value: "emailContact" },
   ];
-
-  const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid email format").required("Required"),
-    password: Yup.string().required("required").min(6, "At least 6 characters"),
-    confirmPasssword: Yup.string()
-      .oneOf([Yup.ref("password"), ""], "Passwords must much")
-      .required("required"),
-    role: Yup.string().required("required"),
-    modeOfContacts: Yup.string().required("required"),
-    // phone: Yup.string().when(
-    //     'modeOfContacts',
-
-    // {
-    // is: 'phone',  //(modeOfContacts)=> modeOfContacts === 'phone',
-    // then: Yup.string().required("required"),
-    // otherwise: Yup.string(),
-    // },
-
-    // )
-  });
 
   const onSubmit = (value: object) => {
     console.log(value);
@@ -73,7 +46,7 @@ const RegistrationForm: React.FunctionComponent<Props> = memo((props) => {
             name="email"
             fieldType="input"
             type="email"
-            label="E-mail"
+            label="e-mail"
           />
           <FormikControls
             name="password"

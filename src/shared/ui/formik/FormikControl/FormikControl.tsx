@@ -1,10 +1,10 @@
 import { memo } from "react";
-import FormikInputField from "shared/FormikInputField";
-import FormikRadioButtons from "shared/FormikRadioButtons";
-import FormikSelectField from "shared/FormikSelectField";
-import FormikTextAreaField from "shared/FormikTextAreaField";
-import FormikCheckboxGroup from "shared/FormikCheckboxGroup";
-import FormikCalendarField from "shared/FormikCalendarField/FormikCalendarField";
+import FormikInputField from "shared/ui/formik/FormikInputField";
+import FormikRadioButtons from "shared/ui/formik/FormikRadioButtons";
+import FormikSelectField from "shared/ui/formik/FormikSelectField";
+import FormikTextAreaField from "shared/ui/formik/FormikTextAreaField";
+import FormikCheckboxGroup from "shared/ui/formik/FormikCheckboxGroup";
+import FormikCalendarField from "shared/ui/formik/FormikCalendarField/FormikCalendarField";
 
 enum fieldTypeKeys {
   input = "input",

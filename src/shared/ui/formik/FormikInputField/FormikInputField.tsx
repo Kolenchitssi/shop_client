@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Field, ErrorMessage } from "formik";
 
-import FormikTextError from "shared/FormikTextError";
+import FormikTextError from "shared/ui/formik/FormikTextError";
 import styles from "./FormikInputField.module.scss";
 
 interface FormikInputFieldProps {

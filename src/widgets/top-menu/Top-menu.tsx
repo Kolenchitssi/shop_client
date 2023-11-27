@@ -6,7 +6,7 @@ import { useThemeContext, themes } from "app/styles/themes/ThemeContext";
 
 import { routePath } from "app/routes/routePaths";
 
-import Toggle from "shared/ToggleTheme/ToggleTheme";
+import Toggle from "shared/ui/ToggleTheme/ToggleTheme";
 import styles from "./top-menu.module.scss";
 
 type Props = {

@@ -4,12 +4,12 @@ import { Field, ErrorMessage, FieldProps } from "formik";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import FormikTextError from "shared/FormikTextError";
+import FormikTextError from "shared/ui/formik/FormikTextError";
 import styles from "./FormikCalendarField.module.scss";
 import "./FormikCalendarField.scss";
 
 interface FormikSelectFieldProps {
-  name: string;  
+  name: string;
   label?: string;
   disabled?: boolean;
   isClearable?: boolean;
@@ -22,9 +22,9 @@ const FormikCalendarField: React.FC<FormikSelectFieldProps> = memo((props) => {
     name,
     label,
     disabled = false,
-    isClearable=true,
-    showIcon=false,
-    placeholder='../../....',
+    isClearable = true,
+    showIcon = false,
+    placeholder = "../../....",
 
     ...rest
   } = props;
@@ -35,30 +35,32 @@ const FormikCalendarField: React.FC<FormikSelectFieldProps> = memo((props) => {
           {label}
         </label>
       )}
-      <Field        
+      <Field
         className={styles.field}
         id={name}
         name={name}
         disabled={disabled}
         {...rest}
       >
-   {(props: FieldProps) => {
-    console.log('props FIELD', props);
-    
-      const {form, field } = props;
-      const {setFieldValue}=form
-      const {value} =field;
-    return  <DatePicker
-    showIcon
-    id={name}
-    isClearable={isClearable}
-    {...field}
-    {...rest}     
-    selected={value}
-    onChange={(val)=>setFieldValue(name, val)} 
-    placeholderText={placeholder}   
-    />}}
-    
+        {(props: FieldProps) => {
+          console.log("props FIELD", props);
+
+          const { form, field } = props;
+          const { setFieldValue } = form;
+          const { value } = field;
+          return (
+            <DatePicker
+              showIcon
+              id={name}
+              isClearable={isClearable}
+              {...field}
+              {...rest}
+              selected={value}
+              onChange={(val) => setFieldValue(name, val)}
+              placeholderText={placeholder}
+            />
+          );
+        }}
       </Field>
       <ErrorMessage name={name} component={FormikTextError} />
     </div>

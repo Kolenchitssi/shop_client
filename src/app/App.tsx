@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import { LeftMenu } from "widgets/left-menu";
-import {NavBar} from "widgets/nav-bar";
+import { NavBar } from "widgets/nav-bar";
 
 import { TopMenu } from "widgets/top-menu";
 import ThemeProvider from "./styles/themes/themeProvider";
@@ -22,6 +22,7 @@ function App() {
   const { user, isUserAuth, isUserLoading } = useAppSelector(
     (state) => state.user
   );
+  console.log(isUserLoading, "isUserLoading");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     // check()
@@ -54,4 +55,3 @@ function App() {
 }
 
 export default App;
-

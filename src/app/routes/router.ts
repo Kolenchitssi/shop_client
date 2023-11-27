@@ -2,6 +2,15 @@ import { lazy } from "react";
 
 import { routePath } from "./routePaths";
 
+// import Admin from "pages/Admin";
+// import Basket from "pages/Basket";
+// import Shop from "pages/Shop";
+// import Auth from "pages/Auth";
+// import Registration from "pages/Registration";
+// import DevicePage from "pages/DevicePage";
+// import ErrorPage from "pages/ErrorPage";
+
+//c Lazy крашилось приложение как будто еще не получен ответ сейчас вроде работате возможно что обновил npm
 const Admin = lazy(() => import("pages/Admin"));
 const Basket = lazy(() => import("pages/Basket"));
 const Shop = lazy(() => import("pages/Shop"));

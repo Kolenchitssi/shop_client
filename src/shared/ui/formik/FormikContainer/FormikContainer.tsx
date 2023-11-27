@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormikControls from "shared/FormikControl/FormikControl";
+import FormikControls from "shared/ui/formik/FormikControl/FormikControl";
 
 interface FormikContainerProps {
   [key: string]: any;
@@ -52,10 +52,10 @@ const FormikContainer: React.FC<FormikContainerProps> = memo((props) => {
       {(formik) => (
         <Form>
           <FormikControls
-            name="email"
+            name="email1"
             fieldType="input"
             type="text"
-            label="E-mail"
+            label="E-mail."
           />
           <FormikControls
             name="description"

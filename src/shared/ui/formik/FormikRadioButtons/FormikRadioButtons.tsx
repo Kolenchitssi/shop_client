@@ -1,7 +1,7 @@
 import { memo, Fragment } from "react";
 import { Field, ErrorMessage, FieldProps } from "formik";
 
-import FormikTextError from "shared/FormikTextError";
+import FormikTextError from "shared/ui/formik/FormikTextError";
 import styles from "./FormikRadioButtons.module.scss";
 
 interface FormikRadioButtonsProps {

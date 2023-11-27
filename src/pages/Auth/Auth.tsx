@@ -39,12 +39,8 @@ const Auth: React.FunctionComponent = () => {
 
   const click = async () => {
     try {
-      if (isLogin) {
-        dispatch(login(email, password));
-        console.log(user);
-      } else {
-        dispatch(registration({ email, password, role }));
-      }
+      dispatch(login(email, password));
+      console.log(user);
       navigate(routePath.SHOP_ROUTE);
     } catch (error: any) {
       alert(error.response.data.message);
@@ -53,67 +49,66 @@ const Auth: React.FunctionComponent = () => {
 
   return (
     <div className="authorization" style={{ height: window.innerHeight - 50 }}>
-      <div className="Row">
-        <div className="Col">
-          <div
-            className="Card authorization__card p-5"
-            style={{ width: 640, height: 200 }}
-          >
-            <h2 className="m-auto">
-              {isLogin ? "Авторизация" : "Регистрация"}
-            </h2>
+      {!isUserLoading && (
+        <div className="Row">
+          <div className="Col">
+            <div
+              className="authorization__card"
+              style={{ width: 640, height: 200 }}
+            >
+              <h2 className="m-auto">Авторизация</h2>
 
-           <form className="form d-flex flex-column">
-              {/* TODO сделать для каждой страницы папку и там scss file */}
-              <input
-                className="mt-3"
-                placeholder="Введите e-mail..."
-                value={email}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setEmail(e.target.value)
-                }
-              />
-              <input
-                className="mt-3"
-                placeholder="Введите пароль..."
-                value={password}
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              > 
-                {isLogin ? (
-                  <div>
-                    Нет аккаунта?{" "}
-                    <NavLink to={routePath.REGISTRATION_ROUTE}>
-                      Регистрация
-                    </NavLink>
-                  </div>
-                ) : (
-                  <div>
-                    Есть аккаунт?
-                    <NavLink to={routePath.LOGIN_ROUTE}>Войти</NavLink>
-                  </div>
-                )}
-                
-                <button
-                  className="mt-3 align-self-end"
-                  // variant="outline-success"
-                  onClick={click}
+              <form className="form d-flex flex-column">
+                {/* TODO сделать для каждой страницы папку и там scss file */}
+                <input
+                  className=""
+                  placeholder="Введите e-mail..."
+                  value={email}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                  }
+                />
+                <input
+                  className=""
+                  placeholder="Введите пароль..."
+                  value={password}
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
                 >
-                  {isLogin ? "Войти" : "Регистрация"}
-                </button>
-              </div>
-            </form> 
+                  {isLogin ? (
+                    <div>
+                      Нет аккаунта?
+                      <NavLink to={routePath.REGISTRATION_ROUTE}>
+                        Регистрация
+                      </NavLink>
+                    </div>
+                  ) : (
+                    <div>
+                      Есть аккаунт?
+                      <NavLink to={routePath.LOGIN_ROUTE}>Войти</NavLink>
+                    </div>
+                  )}
 
+                  <button
+                    className=""
+                    // variant="outline-success"
+                    onClick={click}
+                  >
+                    "Войти"
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

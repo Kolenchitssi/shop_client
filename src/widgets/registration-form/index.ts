@@ -1,1 +1,1 @@
-export {default as RegistrationForm} from './Registration-form'
+export { default as RegistrationForm } from "./Registration-form";

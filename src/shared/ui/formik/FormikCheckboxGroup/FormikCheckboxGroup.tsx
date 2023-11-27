@@ -1,8 +1,9 @@
 import { memo, Fragment } from "react";
 import { Field, ErrorMessage, FieldProps } from "formik";
 
-import FormikTextError from "shared/FormikTextError";
+import FormikTextError from "shared/ui/formik/FormikTextError";
 import styles from "./FormikCheckboxGroup.module.scss";
+import { log } from "console";
 
 interface FormikCheckboxGroupProps {
   name: string;
