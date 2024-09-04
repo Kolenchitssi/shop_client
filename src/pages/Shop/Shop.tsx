@@ -8,9 +8,15 @@ import React, { useContext, useEffect, memo } from "react";
 // import Pages from "../components/Pages";
 // import { fetchBrands, fetchTypes, fetchDevices } from "../http/deviceApi";
 import styles from "./shop.module.scss";
+import Spinner from "shared/ui/basic/Spinner";
+import BrandBar from "widgets/brand-bar";
+import DeviseList from "widgets/device-list";
+import { useAppSelector } from "app/hooks/hooks";
 
 const Shop = memo(() => {
   // const { device } = useContext(Context);
+  const { devices, selectedType, selectedBrand, page, limitOnPage } =
+    useAppSelector((state) => state.device);
 
   // useEffect(() => {
   //   fetchTypes().then((data) => device.setTypes(data));
@@ -33,20 +39,20 @@ const Shop = memo(() => {
   //   });
   // }, [device.page, device.selectedType, device.selectedBrand]);
 
+  //!temp
+  const isFetching = false;
   return (
-    <div className={styles.shop}> shop1 </div>
-    // <Container>
-    //   <Row className="mt-3">
-    //     <Col md={3}>
-    //       <TypeBar />
-    //     </Col>
-    //     <Col md={9}>
-    //       <BrandBar />
-    //       <DeviseList />
-    //       <Pages />
-    //     </Col>
-    //   </Row>
-    // </Container>
+    <Spinner isFetching={isFetching}>
+      <div className={styles.shop}>
+        shop1
+        <div className={styles.leftColumn}>{/* <TypeBar /> */}</div>
+        <div className={styles.rightColumn}>
+          <BrandBar />
+          <DeviseList />
+          {/* <Pages />         */}
+        </div>
+      </div>
+    </Spinner>
   );
 });
 

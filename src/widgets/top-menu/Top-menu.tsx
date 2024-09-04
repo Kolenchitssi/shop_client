@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { NavLink } from "react-router-dom";
 import classNames from "clsx";
 import { useAppSelector } from "app/hooks/hooks";
@@ -14,7 +14,7 @@ type Props = {
   theme?: "light" | "dark";
 };
 
-const TopMenu: React.FunctionComponent = (props: Props) => {
+const TopMenu: React.FunctionComponent = memo((props: Props) => {
   const { className = "" } = props;
   const { isUserAuth } = useAppSelector((state) => state.user);
 
@@ -70,5 +70,6 @@ const TopMenu: React.FunctionComponent = (props: Props) => {
       </div>
     </>
   );
-};
+});
+
 export default TopMenu;

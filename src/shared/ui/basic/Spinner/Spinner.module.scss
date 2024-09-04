@@ -1,0 +1,74 @@
+@import "app/styles/variables";
+
+.spinner {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* элементы спиннера также выравниваем по центру */
+  .spinner {
+    text-align: center;
+  }
+
+  /*  элемент спиннера - делаем круг из квадрата 40x40
+    с помощью свойства border-radius, левая граница круга окрашена
+    в другой цвет. далее запускаем бесконечную анимацию
+*/
+  .spinner__animation {
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    border-left: 3px solid rgb(129, 138, 145);
+    animation: loading-spinner 0.5s infinite linear;
+  }
+
+  /* это текст для спиннера, например - "Загрузка..." */
+  .spinner__info {
+    display: block;
+    padding-top: 5px;
+    color: rgb(129, 138, 145);
+    font-size: 0.9rem;
+  }
+
+  /* сама анимация вращения */
+  @keyframes loading-spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// .spinner {
+//   display: flex;
+//   flex-grow: 1;
+//   align-items: center;
+//   align-self: center;
+//   justify-content: center;
+//   overflow: hidden;
+
+//   .MuiCircularProgress-root.css-18lrjg1-MuiCircularProgress-root {
+//     color: green;
+//   }
+// }
+
+// :root[data-theme="light"] .spinner {
+//   .MuiCircularProgress-root.MuiCircularProgress-colorPrimary {
+//     color: $spinner-primary !important;
+//   }
+// }
+
+// :root[data-theme="dark"] .spinner {
+//   .MuiCircularProgress-root.MuiCircularProgress-colorPrimary {
+//     color: $spinner-secondary;
+//   }
+// }

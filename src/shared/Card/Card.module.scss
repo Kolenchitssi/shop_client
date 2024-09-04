@@ -1,0 +1,20 @@
+@import "styles/variables";
+@import "styles/typography";
+
+.card {
+  background: $color-white;
+  border-radius: 16px;
+  box-shadow: $shadow-block;
+
+  &__header {
+    padding: 16px 24px;
+
+    &-title.MuiTypography-h2 {
+      @extend .text-headline1__medium;
+    }
+  }
+
+  &__content {
+    padding: 0 24px 16px;
+  }
+}

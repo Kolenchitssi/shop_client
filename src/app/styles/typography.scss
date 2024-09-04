@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.text-header {
+  font-weight: normal;
+  font-size: 2rem;
+  font-family: $font-family-primary;
+  font-style: normal;
+  line-height: 2.2rem;
+}
+
+.text-header__medium {
+  font-weight: 600;
+  font-size: 2.2rem;
+  font-family: $font-family-primary;
+  line-height: 2.5rem;
+  letter-spacing: 0.1px;
+}
+
+.text-regular {
+  font-weight: normal;
+  font-size: 1.5rem;
+  font-family: $font-family-primary;
+  line-height: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.text-label {
+  font-weight: 500;
+  font-size: 0.8rem;
+  font-family: $font-family-primary;
+  line-height: 1rem;
+}
+
+.text-caps-medium {
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: $font-family-primary;
+  font-style: normal;
+  line-height: 1.2rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+}

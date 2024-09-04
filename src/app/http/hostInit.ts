@@ -9,7 +9,7 @@ const $authHost = axios.create({
 });
 
 const authInterceptor = (config: any) => {
-  // config.headers.authorization = `Bearer ${localStorage.getItem("token")}`;
+  // config.headers.authorization = `Bearer ${localStorage.getItem("token")}`;// не правильное слово autorization
   config.headers.autorization = `Bearer ${localStorage.getItem("token")}`;
   return config;
 };

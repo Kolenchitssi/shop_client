@@ -15,6 +15,8 @@ const AppRouter: FC<IAppRouterProps> = ({ isAuthorized }) => {
     (state) => state.user
   );
   // todo добавить навигацию для Суперадмина он может изменять роли пользователей
+
+  //<Suspense> позволяет отображать фалбэк до тех пор, пока его дочерние элементы не закончат загрузку.
   return (
     <Routes>
       {isUserAuth &&

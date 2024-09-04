@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../app/store/store";
 import { IUser } from "./user.models";
-import { registration } from "./userActionCreator";
+import { check, login, registration } from "./userActionCreator";
 
 export interface IUserState {
   user: IUser;
@@ -45,6 +45,10 @@ export const userSlice = createSlice({
   // Используйте тип PayloadAction для объявления содержимого `action.payload`
   reducers: {
     // Autorization
+    //! это нужно только для закоментированного варианта в UserActionCreator (*1)
+    //** */ мы будем использовать как в  extraReducers
+    // тоесть веьэтот код ненужен он толко как пример
+
     userAutorizationFetching: (state) => {
       state.isUserLoading = true;
     },
@@ -75,8 +79,8 @@ export const userSlice = createSlice({
       state.isUserAuth = false;
       state.error = action.payload;
     },
-    // Chek user
     //todo add userRemove
+    // Chek user
 
     setUser: (state, action: PayloadAction<IUser>) => {
       state.user = action.payload;
@@ -113,10 +117,50 @@ export const userSlice = createSlice({
         } else {
           state.error = "Unknow error registration";
         }
+      }) //login
+      .addCase(login.pending, (state) => {
+        state.isUserLoading = true;
+      })
+      .addCase(login.fulfilled, (state, action: PayloadAction<IUser>) => {
+        state.user = action.payload;
+        state.isUserLoading = false;
+        state.isUserAuth = true;
+        state.error = "";
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.isUserLoading = false;
+        state.isUserAuth = false;
+        if (action.error.message) {
+          state.error = action.error.message;
+        } else {
+          state.error = "Unknow error login";
+        }
+      }) //Check user
+      .addCase(check.pending, (state) => {
+        state.isUserLoading = true;
+      }) //в userActionCreator указываем что  он будет отдавать  check = createAsyncThunk<IUser>
+      .addCase(check.fulfilled, (state, action: PayloadAction<IUser>) => {
+        state.user = action.payload;
+        state.isUserLoading = false;
+        state.isUserAuth = true;
+        state.error = "";
+      })
+      .addCase(check.rejected, (state, action) => {
+        state.isUserLoading = false;
+        state.isUserAuth = false;
+        if (action.error.message) {
+          state.error = action.error.message;
+        } else {
+          state.error = "Unknow error login";
+        }
       });
   },
 });
 
 export const { setUser, setIsAuth, setIsLoading } = userSlice.actions;
+
+// так более удобно и не вызовит путаницы с именами
+export const { actions: userSliceActions, reducer: userSliceReducer } =
+  userSlice;
 
 export default userSlice.reducer;

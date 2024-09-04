@@ -1,0 +1,29 @@
+.device-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+  min-width: 80px;
+  border: 1px solid black;
+}
+
+.item-img {
+  width: 150px;
+  height: 150px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  // background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  display: flex;
+  padding-left: 12px;
+}
+
+.star {
+  height: 16px;
+  width: 18px;
+}

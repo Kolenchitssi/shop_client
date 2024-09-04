@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 
@@ -17,7 +17,7 @@ type Props = {
   theme?: "light" | "dark";
 };
 
-const LeftMenu: React.FunctionComponent = (props: Props) => {
+const LeftMenu: React.FunctionComponent<Props> = memo((props) => {
   const { className = "", theme = "light" } = props;
   const navigate = useNavigate();
 
@@ -38,7 +38,10 @@ const LeftMenu: React.FunctionComponent = (props: Props) => {
           {/* /Can may use <NavLink to={SHOP_ROUTE}>Home</NavLink> */}
           {!isUserAuth ? (
             <div>
-              <ButtonLink className={styles.rowLink} to={routePath.SHOP_ROUTE}>
+              <ButtonLink
+                className={styles.rowLink}
+                onClick={() => navigate(routePath.SHOP_ROUTE)}
+              >
                 Домой
               </ButtonLink>
               <ButtonLink
@@ -75,5 +78,6 @@ const LeftMenu: React.FunctionComponent = (props: Props) => {
       </div>
     </>
   );
-};
+});
+
 export default LeftMenu;

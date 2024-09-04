@@ -1,0 +1,12 @@
+.device-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 8px;
+}
+
+@media (max-width: 800px) {
+  .device-list {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}

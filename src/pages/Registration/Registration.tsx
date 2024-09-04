@@ -10,7 +10,7 @@ import {
   routePath,
 } from "app/routes/routePaths";
 
-import { useAppDispatch, useAppSelector } from "app/hooks/hooks";
+import { useAppDispatch, useAppSelector, useAppAction } from "app/hooks/hooks";
 import { login, registration } from "features/user/userActionCreator";
 
 import FormikInputField from "shared/ui/formik/FormikInputField";
@@ -23,6 +23,11 @@ import styles from "./Registration.module.scss";
 
 const Registration: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
+  //! new  я добавил useAppAction и теперь можно вот так:
+  const { registration } = useAppAction();
+  // сразу диспатчится указанный экшен
+  // userRegistrationFetching();
+
   const { user, isUserAuth, isUserLoading } = useAppSelector(
     (state) => state.user
   );
@@ -45,7 +50,10 @@ const Registration: React.FunctionComponent = () => {
 
   const click = async () => {
     try {
-      dispatch(registration({ email, password, role }));
+      // dispatch(registration({ email, password, role }));
+      //! new  я добавил useAppAction и теперь можно вот так:
+      registration({ email, password, role });
+
       navigate(routePath.SHOP_ROUTE);
     } catch (error: any) {
       alert(error.response.data.message);

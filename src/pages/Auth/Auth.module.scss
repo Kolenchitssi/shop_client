@@ -1,0 +1,37 @@
+@import "app/styles/variables";
+@import "app/styles/typography.scss";
+
+.authorization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    min-width: 480px;
+    min-height: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 1px 12px $shadow-block;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  align-items: flex-end;
+  padding-bottom: 12px;
+}
+
+.label {
+  @extend .text-label;
+  padding-right: 6px;
+}
+
+.button {
+  margin: 0 6px;
+  color: $color-white;
+}
+
+.button_customize {
+  margin: 0 6px;
+  color: rgb(127, 225, 255);
+}

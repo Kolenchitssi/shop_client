@@ -17,3 +17,8 @@ export interface IRegistrationPayload {
   password: string;
   role: string;
 }
+
+export interface ILoginPayload {
+  email: string;
+  password: string;
+}

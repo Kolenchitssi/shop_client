@@ -1,0 +1,11 @@
+@import "app/styles/variables";
+
+.brand_bar {
+  display: flex;
+}
+
+.card {
+  cursor: pointer;
+  padding: 6px;
+  border: 1px solid $color-black;
+}
